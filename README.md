@@ -17,3 +17,7 @@ myexample.C
 to make changes to the analysis and the output file, change
 
 myexampleAnalysis.cc
+
+Credits:
+-Iterative softdrop code is from Patrick McCormack
+-Lund plane is based on code from Gavin Salam (https://gitlab.cern.ch/gsalam/2017-lund-from-MC)
