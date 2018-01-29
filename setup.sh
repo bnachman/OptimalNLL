@@ -1,9 +1,12 @@
 #!/bin/bash
 
 setup_PYTHIA() {
-    export PYTHIA8LOCATION=/global/projecta/projectdirs/atlas/bnachman/code/pythia8226/
+    export PYTHIA8LOCATION=/global/projecta/projectdirs/atlas/bnachman/code/pythia8230/
     export PYTHIA8DATA=${PYTHIA8LOCATION}xmldoc/
     export LD_LIBRARY_PATH=${PYTHIA8LOCATION}lib/:$LD_LIBRARY_PATH
+
+    export DIRELOCATION=/global/projecta/projectdirs/atlas/bnachman/code/direforpythia/trunk/
+    export LD_LIBRARY_PATH=${DIRELOCATION}lib/:$LD_LIBRARY_PATH
 }
 
 setup_ROOT() {

@@ -30,6 +30,7 @@
 #include "fastjet/contrib/EnergyCorrelator.hh"
 
 #include "Pythia8/Pythia.h"
+#include "Dire/Dire.h"
 
 using namespace std;
 

@@ -20,6 +20,7 @@
 #include "fastjet/Selector.hh"
 
 #include "Pythia8/Pythia.h"
+#include "Dire/Dire.h"
 
 #include "myTools.h"
 #include "myexampleAnalysis.h"
@@ -70,6 +71,7 @@ int main(int argc, char* argv[]){
     //------
 
    Pythia8::Pythia* pythia8b = new Pythia8::Pythia();
+   Pythia8::Dire* mydire = new Pythia8::Dire();
 
    int    seed      =-1;
    seed = getSeed(seed);
@@ -101,6 +103,8 @@ int main(int argc, char* argv[]){
    pythia8b->readString("Beams:idB = 2212");
    pythia8b->readString("Beams:eCM = 13000");
    pythia8b->init();//2212 /* p */, 2212 /* p */, 13000. /* TeV */);
+
+   mydire->init(*pythia8b);
    
    analysis1->SetOutName(outName);
    analysis1->Begin();
