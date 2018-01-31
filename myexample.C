@@ -72,6 +72,7 @@ int main(int argc, char* argv[]){
 
    Pythia8::Pythia* pythia8b = new Pythia8::Pythia();
    Pythia8::Dire* mydire = new Pythia8::Dire();
+   mydire->initSettings(*pythia8b);
 
    int    seed      =-1;
    seed = getSeed(seed);
@@ -102,9 +103,12 @@ int main(int argc, char* argv[]){
    pythia8b->readString("Beams:idA = 2212");
    pythia8b->readString("Beams:idB = 2212");
    pythia8b->readString("Beams:eCM = 13000");
-   pythia8b->init();//2212 /* p */, 2212 /* p */, 13000. /* TeV */);
-
+   //pythia8b->init();//2212 /* p */, 2212 /* p */, 13000. /* TeV */);
+   pythia8b->readString("DireTimes:kernelOrder = -1"); 
+   
    mydire->init(*pythia8b);
+   //pythia8b->readString("DireTimes:kernelOrder = -1");
+   //pythia8b->init();
    
    analysis1->SetOutName(outName);
    analysis1->Begin();
